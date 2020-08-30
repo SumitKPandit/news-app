@@ -6,7 +6,7 @@ const NewsItem = ({article}) => {
     return (
         <section className={classes.NewsItem}>
             <div className={classes.image}>
-                <img src={article.urlToImage ? article.urlToImage : "https://via.placeholder.com/250x150"} />
+                <img src={article.urlToImage ? article.urlToImage : "https://via.placeholder.com/250x150?text=NEWS+APP"} />
             </div>
             <div className={classes.text}>
             <h3 className={classes.title}>{article.title}</h3>

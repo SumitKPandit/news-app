@@ -12,6 +12,7 @@
         border: none;
         background-color: $alabaster;
         width: 100%;
+        border-radius: 0.2rem;
     }
     @include medium_or_up {
         width: 30%;

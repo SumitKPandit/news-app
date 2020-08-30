@@ -1,0 +1,10 @@
+@import "../../base_styles/variables";
+
+.Alert {
+    width: 95%;
+    margin: 1rem auto;
+    max-width: $layout_max_width;
+    padding: 1rem;
+    background-color: #fbb;
+    border-radius: 0.5rem;
+}
