@@ -2,11 +2,11 @@ import React from "react";
 
 import classes from "./Search.module.scss";
 
-const Search = ({handleChange}) => {
+const Search = ({query, changeHandler}) => {
     return (
         <form className={classes.Search}>
-            <label for="search">Search</label>
-            <input type="text" name="search" placeholder="Search..." />
+            <label htmlFor="search">Search</label>
+            <input type="text" name="search" placeholder="Search..." value={query} onChange={changeHandler} />
         </form>
     );
 };
