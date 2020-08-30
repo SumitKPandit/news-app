@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './App.css';
+import classes from './App.module.scss';
 import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <div className="App">
+    <div className={classes.App}>
       <Header />
       <h1>Hello World!</h1>
     </div>

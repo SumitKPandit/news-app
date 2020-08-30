@@ -17,3 +17,10 @@ $body_font: 'Nunito Sans', sans-serif;
 $body_thin: 200;
 $body_normal: 400;
 $body_bold: 900;
+
+// Breakpoints
+@mixin medium_or_up {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
+}
