@@ -2,27 +2,25 @@
 
 .Header {
     background-color: $raisin_black;
-    div {
+    div.container {
+        width: 95%;
         margin: 0 auto;
-        padding-top: 1rem;
         max-width: $layout_max_width;
-        color: $alabaster;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        width: 95%;
-        p {
+        padding: 1rem 0;
+        h3 {
             font-family: $heading_font;
             font-weight: $heading_bold;
             font-size: 1.5rem;
             span {
-                font-weight: normal;
+                font-weight: $heading_normal;
             }
+            color: $alabaster;
         }
         @include medium_or_up {
             flex-direction: row;
-            padding-top: 0;
             justify-content: space-between;
         }
     }

@@ -1,21 +1,17 @@
 @import "../../base_styles/variables";
 
 .Search {
-    margin: 1rem auto;
-    max-width: $layout_max_width;
-    width: 80%;
+    width: 100%;
+    margin-top: .5rem;
+    @include medium_or_up {
+        margin-top: 0;
+        width: 30%;
+    }
     label {
         display: none;
     }
     input {
         padding: 0.5rem;
-        border: none;
-        background-color: $alabaster;
         width: 100%;
-        border-radius: 0.2rem;
-    }
-    @include medium_or_up {
-        width: 30%;
-        margin: 1rem 0;
     }
 }

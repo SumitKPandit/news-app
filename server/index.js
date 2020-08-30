@@ -9,8 +9,8 @@ const buildUrl = (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     if(req.url === "/init") {
         req.apiUrl = `${apiUrl}/top-headlines?country=gb&apiKey=${process.env.API_KEY}`;
-    } else if(!req.params[0] === '') {
-        req.apiUrl = `${apiUrl}/everything?q=${req.params[0]}&apiKey=${process.env.API_KEY}`;
+    } else if(req.query.q) {
+        req.apiUrl = `${apiUrl}/everything?q=${req.query.q}&apiKey=${process.env.API_KEY}`;
     }
     next();
 }
@@ -29,7 +29,7 @@ const getNews = async (req, res) => {
 
 app.get("/init", getNews);
 
-app.get("/search/:query", getNews);
+app.get("/search", getNews);
 
 app.listen(3001, () => {
     console.log("Listening on port 3001...");
