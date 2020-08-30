@@ -1,5 +1,11 @@
+@import "./base_styles/variables";
+
 .App {
-  text-align: center;
+  main {
+    max-width: $layout_max_width;
+    margin: 0 auto;
+    width: 95%;
+  }  
 }
 
 .App-logo {

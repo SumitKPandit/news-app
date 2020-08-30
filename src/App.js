@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import classes from './App.module.scss';
 import Header from "./components/Header/Header";
+import NewsGroup from './components/NewsGroup/NewsGroup';
 
 function App() {
 
@@ -9,26 +10,18 @@ function App() {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    fetch("http://localhost:3001/init")
-      .then(res => res.json())
-      .then(data => {
-        if(data.status === "ok")
-          setArticles(data.articles)
-      }).catch(err => {
+    (async function() {
+      try {
+        const res = await fetch("http://localhost:3001/init");
+        const data = await res.json();
+        if(data.status === "ok") {
+          setArticles(data.articles);
+        }
+      } catch(err) {
         console.log(err);
-      });
+      }
+    })();
   }, []);
-
-  useEffect(() => {
-    fetch(`http://localhost:3001/search/${query}`)
-    .then(res => res.json())
-    .then(data => {
-      if(data.status === "ok")
-        setArticles(data.articles)
-    }).catch(err => {
-      console.log(err);
-    });
-  }, [query]);
 
   const handleChange = e => {
     e.preventDefault();
@@ -38,8 +31,10 @@ function App() {
   return (
     <div className={classes.App}>
       <Header query={query} changeHandler={handleChange} />
-      <h1>Hello World!</h1>
-      {articles.map(article => article.author)}
+      <main>
+        <h1>Top Headlines</h1>
+        <NewsGroup articles={articles}/>
+      </main>
     </div>
   );
 }
