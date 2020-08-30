@@ -1,0 +1,22 @@
+@import "../../base_styles/variables";
+
+.header {
+    background-color: $raisin_black;
+    div {
+        margin: 0 auto;
+        max-width: $layout_max_width;
+        height: 4rem;
+        color: $alabaster;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            font-family: $heading_font;
+            font-weight: $heading_bold;
+            font-size: 1.5rem;
+            span {
+                font-weight: normal;
+            }
+        }
+    }
+}
