@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import classes from "./NewsItem.module.scss";
 
@@ -16,6 +17,10 @@ const NewsItem = ({article}) => {
             </div>
         </section>
     );
+};
+
+NewsItem.propTypes = {
+    article: PropTypes.object
 };
 
 export default NewsItem;

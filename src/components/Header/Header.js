@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import classes from "./Header.module.scss";
 import Search from "../Search/Search";
@@ -12,6 +13,10 @@ const Header = ({changeHandler}) => {
             </div>
         </header>
     );
+};
+
+Header.propTypes = {
+    changeHandler: PropTypes.func
 };
 
 export default Header;

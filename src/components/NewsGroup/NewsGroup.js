@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import NewsItem from "./NewsItem/NewsItem";
 
@@ -12,6 +13,10 @@ const NewsGroup = ({articles}) => {
             })}
         </div>
     );
+};
+
+NewsGroup.propTypes = {
+    articles: PropTypes.array
 };
 
 export default NewsGroup;
